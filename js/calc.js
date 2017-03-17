@@ -6,23 +6,25 @@ $(function() {
   $('#submitCalcForm').click(function(e) {
     e.preventDefault();
     
+    if (income.val() === '') {
+      alert('Please enter an Income.'); // change to message
+      $('#monthly-award').html('');
+      return;
+    }
+
+    if (children.val() === '-1') {
+      alert('Please enter a Number of children.'); // change to message
+      $('#monthly-award').html('');
+      return;
+    }
+    
     var monthlyAward = calcChildSupport(income.val(), children.val());
     
-    (monthlyAward || monthlyAward === 0) ? $('#monthly-award').html('$' + monthlyAward) : $('#monthly-award').html('');
+    $('#monthly-award').html('$' + monthlyAward);
   });
 });
 
 function calcChildSupport(income, children) {
-  if (income === '') {
-    alert('Please enter an Income.'); // change to message
-    return;
-  }
-
-  if (children === '-1') {
-    alert('Please enter a Number of children.'); // change to message
-    return;
-  }
-  
   income = Number(income);
   
   var ranges = buildRanges(11000, 149000, 1000, 999);
