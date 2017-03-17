@@ -8,7 +8,7 @@ $(function() {
     
     var monthlyAward = calcChildSupport(income.val(), children.val());
     
-    $('#monthly-award').html('$' + monthlyAward);
+    (monthlyAward || monthlyAward === 0) ? $('#monthly-award').html('$' + monthlyAward) : $('#monthly-award').html('');
   });
 });
 
