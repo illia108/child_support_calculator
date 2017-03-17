@@ -5,6 +5,33 @@
   <title>Child Support Calculator</title>
 </head>
 <body>
+  <form id="calcForm">
+    <label for="userIncome">
+      Income
+      <input type="number" name="userIncome" id="userIncome" placeholder="80000">
+    </label>
+    <label for="userChildren">
+      Children
+      <select type="number" name="userChildren" id="userChildren">
+        <option selected="selected" value="-1">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6+">6+</option>
+      </select>    
+    </label>
+    <input type="submit" name="submit" id="submitCalcForm" value="Calculate">
+  </form>
+  <p>Monthly Award: <span id="monthly-award"></span></p>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous">
+  </script>
+  <script type="application/javascript" src="js/values.js"></script>
   <script type="application/javascript" src="js/calc.js"></script>
 </body>
 </html>
