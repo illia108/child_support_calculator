@@ -1,26 +1,26 @@
-$(function() {
-  var calcForm = $('#calcForm');
-  var income = $('#userIncome');
-  var children = $('#userChildren');
+jQuery(document).ready(function() {
+  var calcForm = jQuery('#calcForm');
+  var income = jQuery('#userIncome');
+  var children = jQuery('#userChildren');
   
-  $('#submitCalcForm').click(function(e) {
+  jQuery('#submitCalcForm').click(function(e) {
     e.preventDefault();
     
     if (income.val() === '') {
       alert('Please enter an Income.'); // change to message
-      $('#monthly-award').html('');
+      jQuery('#monthly-award').html('');
       return;
     }
 
     if (children.val() === '-1') {
       alert('Please enter a Number of children.'); // change to message
-      $('#monthly-award').html('');
+      jQuery('#monthly-award').html('');
       return;
     }
     
     var monthlyAward = calcChildSupport(income.val(), children.val());
     
-    $('#monthly-award').html('$' + monthlyAward);
+    jQuery('#monthly-award').html('$' + monthlyAward);
   });
 });
 
